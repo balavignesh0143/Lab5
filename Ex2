@@ -1,0 +1,63 @@
+package lab5;
+import java.util.Scanner;
+@SuppressWarnings("serial")
+class FibonacException extends Exception
+{
+	private int a,b,c;
+	public FibonacException(int a,int b,int c)
+	{
+		this.a=a;
+		this.b=b;
+		this.c=c;
+	}
+	public void run(int n)
+	{
+		System.out.print("Fibonacci Series: 1 ");
+		for(int i=1;i<=n;i++)
+        {
+            a=b;
+            b=c;
+            c=a+b;
+            System.out.print(b+" ");
+        }
+	}
+	/*public void series(int n)
+	{
+		System.out.print("Fibonacci Series: 1 ");
+		for(int i=1;i<=n;i++)
+        {
+            a=b;
+            b=c;
+            c=a+b;
+            System.out.print(b+" ");
+        }
+	}*/
+}
+public class Exercise2 {
+	static void fibo(int n)throws FibonacException
+	{
+		int a=0,b=1,c=1;
+		System.out.print("Fibonacci Series: 1 ");
+		for(int i=1;i<=n;i++)
+		{
+			a=b;
+			b=c;
+			c=a+b;
+			System.out.print(b+" ");
+		}
+	}
+	    public static void main(String[] args) throws FibonacException 
+	    {
+	    	int n;
+	    	FibonacException f=new FibonacException(0,1,1);
+	        Scanner sc= new Scanner(System.in);
+	        System.out.print("Enter value of n:");
+	        n=sc.nextInt();
+	        Exercise2.fibo(n);
+	        //f.series(n);
+	        f.run(n);
+	        System.out.println("\n");
+	        
+	        sc.close();
+    }
+}

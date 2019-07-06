@@ -1,0 +1,33 @@
+package lab5;
+
+import java.util.Scanner;
+
+@SuppressWarnings("serial")
+class myExten extends Exception{
+	private int age;
+	public myExten(int age)
+	{
+		this.age=age;
+	}
+	public String toString()
+	{
+		return "Not Eligible for vote "+age;
+	}
+}
+
+public class Exercise5 {
+	static void validation(int age) throws myExten
+	{
+		if(age<15)
+			throw new myExten(age);
+		else
+			System.out.println("Eligible");
+	}
+	public static void main(String[] args) throws myExten {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the age:");
+		int age=sc.nextInt();
+		Exercise5.validation(age);
+		sc.close();
+	}
+}

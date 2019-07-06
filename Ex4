@@ -1,0 +1,43 @@
+package lab5;
+import java.util.Scanner;
+@SuppressWarnings("serial")
+class NameException extends Exception
+{
+	NameException()
+	{
+	}
+	public String toString()
+	{
+		return "Blank";
+	}
+}
+public class Exercise4 {
+	static void fnln(String fname,String lname) throws NameException
+	{
+		if(fname.isEmpty())
+		{
+			throw new NameException();
+		}
+		if(lname.isEmpty())
+		{
+			throw new NameException();
+		}
+		else
+		{
+			System.out.println(fname+""+lname);
+		}
+	}
+	public static void main(String[] args) throws NameException {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the first name:");
+		String fname=sc.nextLine();
+		System.out.println("Enter the last name:");
+		String lname=sc.nextLine();
+		fnln(fname,lname);
+		sc.close();
+		}
+}
+
+
+
+

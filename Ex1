@@ -1,0 +1,60 @@
+package lab5;
+import java.util.Scanner;
+@SuppressWarnings("serial")
+class ColorException extends Exception
+{
+	String color;
+	public ColorException(String color)
+	{
+		this.color=color;
+	}
+}
+public class Exercise1 {
+	static void colorEx(String color)
+	{
+		switch(color)
+		{
+		case "red":
+			System.out.println("STOP...");
+			break;
+		case "yellow":
+			System.out.println("WAIT...");
+			break;
+		case "green":
+			System.out.println("GO...");
+			break;
+		default :
+			System.out.println("Invalid Color...");
+			break;
+		}
+	}
+	
+		public static void main(String[] args) throws ColorException{
+			String color;
+			Scanner sc=new Scanner(System.in);
+			//System.out.println("Option 1 for RED");
+			//System.out.println("Option 2 for YELLOW");
+			//System.out.println("Option 3 for GREEN");
+			System.out.println("Enter your option:");
+			//color=sc.nextInt();
+			color=sc.next();
+			Exercise1.colorEx(color);
+			/*switch(color)
+			{
+			case 1:
+				System.out.println("STOP...");
+				break;
+			case 2:
+				System.out.println("WAIT...");
+				break;
+			case 3:
+				System.out.println("GO...");
+				break;
+			default :
+				System.out.println("............");
+				break;
+			}*/
+			
+			sc.close();
+	}
+}
